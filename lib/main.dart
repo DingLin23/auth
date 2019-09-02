@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp> {
     switch (result.status) {
       case FacebookLoginStatus.loggedIn:
         final token = result.accessToken.token;
-        final graphResponse = await http.get('https://graph.facebook.com/v2.12/me?fields=name,picture,email&access_token=${token}');
+        final graphResponse = await http.get('https://graph.facebook.com/v2.12/me?fields=name,picture,email&access_token=$token');
         final profile = JSON.jsonDecode(graphResponse.body);
         print(profile);
         setState(() {
